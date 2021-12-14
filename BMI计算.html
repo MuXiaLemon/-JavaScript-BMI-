@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI计算器</title>
+</head>
+
+<body>
+    <label>请输入您的身高(m²):</label><input type="text" id="num-a">
+    <br>
+    <label>请输入您的体重(kg):</label><input type="text" id="num-b">
+    <br>
+    <button id="btn">开始测量您的体型</button>
+    <p id="result"></p>
+    <script>
+        //在这里实现编写您的代码
+        document.getElementById("btn").onclick = function () {
+            var BMI
+            var a = parseFloat(document.getElementById('num-a').value)
+            var b = parseFloat(document.getElementById('num-b').value)
+            console.log(a)
+            console.log(b)
+            BMI = b / Math.pow(a,2)
+            BMI = BMI.toFixed(2)
+            if(BMI < 18.5){
+                document.getElementById("result").innerHTML = "您的BMI为：" +BMI+ "您是偏瘦体型，可以适当增肥咯"
+            }
+            else if(18.5<= BMI < 25){
+                document.getElementById("result").innerHTML = "您的BMI为：" +BMI+ "您是标准体型，保持的不错哟"
+            }
+            else if(25<= BMI < 28){
+                document.getElementById("result").innerHTML = "您的BMI为：" +BMI+ "您是微胖体型，可以多吃粗粮，让饮食结构更加健康吧"
+            }
+            else if(28<= BMI < 32){
+                document.getElementById("result").innerHTML = "您的BMI为：" +BMI+ "您是肥胖体型，管住嘴迈开腿开始减肥吧！"
+            }
+            else if(BMI >= 32){
+                document.getElementById("result").innerHTML = "您的BMI为：" +BMI+ "您是肥胖体型，管住嘴迈开腿开始减肥吧！"
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>
